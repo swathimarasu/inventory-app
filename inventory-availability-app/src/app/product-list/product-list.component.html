@@ -1,0 +1,34 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products" class="ub-product">
+ <p *ngIf="product.availableCount" class="ub-product-count">
+    {{ product.availableCount }}
+  </p>
+
+    <a [title]="product.productDetails.name + ' details'" class="ub-product-title">
+      {{ product.productDetails.name }}
+    </a>
+
+
+  <p *ngIf="product.productDetails.deptName" class="ub-product-info">
+    Deptartment Name: {{ product.productDetails.deptName }}
+  </p>
+
+    <p *ngIf="product.location.name" class="ub-product-info">
+    Location: {{ product.location.name }}
+  </p>
+      <p *ngIf="product.location.zipCode" class="ub-product-info">
+    ZIP: {{ product.location.zipCode }}
+  </p>
+
+  <!-- <button (click)="share()">
+    Share
+  </button> -->
+
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

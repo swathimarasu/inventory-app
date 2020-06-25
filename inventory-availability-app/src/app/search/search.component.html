@@ -1,0 +1,22 @@
+
+<div id="search-component" class="search-component">
+  <div class="search-input">
+    <label for="name">
+      Search by Name
+    </label>
+    <input id="name" type="text"  #nameInput>
+  </div>
+
+  <div class="search-input">
+    <label for="deptName">
+      Search by Department Name
+    </label>
+    <input id="deptName" type="text" #deptNameInput>
+  </div>
+<div class="search-btn">
+    <button class="button" type="button" (click)="searchProducts(nameInput,deptNameInput)">Search</button>
+        <!-- <button class="button" type="button" (click)="searchProducts(nameInput,deptNameInput)">Clear</button> -->
+</div>
+<app-product-list ></app-product-list>
+
+</div>

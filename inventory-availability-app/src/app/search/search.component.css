@@ -1,0 +1,17 @@
+.search-componen{
+
+width: 100%;
+padding: 20px;
+  box-shadow: 0 3px 17px 0 rgba(65, 78, 93, 0.08);
+  border:  1px solid #3d3f46;
+
+  height: 100px;
+}
+.search-input{
+  display:inline-block;
+  margin: 10px;
+}
+.search-btn{
+  margin: 0 10px;
+  display: block;
+}
