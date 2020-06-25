@@ -15,22 +15,22 @@ import { SearchService } from '../search.service';
   styleUrls: [ './search.component.css' ]
 })
 export class SearchComponent implements OnInit {
-  searchResult$: Observable<Search[]>;
+  searchResult: Observable<Search[]>;
 
   constructor(private searchService: SearchService) {}
 
   searchProducts(name: HTMLInputElement, deptName: HTMLInputElement, ){
     console.log("function called");
     console.log("name & deptName values captured from Search Component ", name.value, deptName.value);
-    this.searchResult$ = this.searchService.searchProducts(name.value, deptName.value);
-    console.log(this.searchResult$ )
+    this.searchResult = this.searchService.searchProducts(name.value, deptName.value);
+    console.log(this.searchResult )
   }
   // // Push a search term into the observable stream.
   // search(term: string): void {
   //   this.searchProducts.next(term);
   // }
 
-  ngOnInit(): void {
+  //ngOnInit(): void {
     // this.searchResult$ = this.searchTerms.pipe(
     //   // wait 300ms after each keystroke before considering the term
     //   debounceTime(300),
@@ -41,6 +41,9 @@ export class SearchComponent implements OnInit {
     //   // switch to new search observable each time the term changes
     //   switchMap((name: string, deptName: string) => this.searchService.searchProducts(name, deptName)),
     // );
+  //}
+  ngOnInit() {
+    //this.data.currentMessage.subscribe(searchResult => this.searchResult$ = searchResult)
   }
 }
 

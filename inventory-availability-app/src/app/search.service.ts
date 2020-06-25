@@ -30,11 +30,11 @@ export class SearchService {
      console.log(`Got request for products with  "${name}" and/or "${deptName}"`);
 
      // Uses http.get() to load data from a single API endpoint
-      this.searchUrl = `${this.searchUrl}department=${deptName}&product=${name}`
+      //this.searchUrl = `${this.searchUrl}department=${deptName}&product=${name}`
       
       //this.searchUrl = `${this.searchUrl}${queryParam}`;
       console.log(`search api url "${this.searchUrl}`)
-      this.http.get<any>(`${this.searchUrl}`).subscribe(data => {
+      this.http.get<any>(`${this.searchUrl}department=${deptName}&product=${name}`).subscribe(data => {
            this.totalProducts= data;
         })
 

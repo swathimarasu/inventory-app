@@ -17,6 +17,6 @@
     <button class="button" type="button" (click)="searchProducts(nameInput,deptNameInput)">Search</button>
         <!-- <button class="button" type="button" (click)="searchProducts(nameInput,deptNameInput)">Clear</button> -->
 </div>
-<app-product-list ></app-product-list>
+<app-product-list [productResults]="searchResult" ></app-product-list>
 
 </div>
