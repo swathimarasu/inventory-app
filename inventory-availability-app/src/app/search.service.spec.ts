@@ -46,7 +46,7 @@ describe('search service', ()=> {
         expect(req.request.method).toEqual('GET');
         req.flush([]);
     })
-    it('should call the service without name and with deptName set', () => {
+    it('should call the service with name and deptName set', () => {
         const deptName = 'Health';
         const name = 'Mask'
         const results$ = service.searchProducts(name, deptName);
