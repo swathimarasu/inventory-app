@@ -34,20 +34,13 @@ export class SearchService {
       
       //this.searchUrl = `${this.searchUrl}${queryParam}`;
       console.log(`search api url "${this.searchUrl}`)
-      this.http.get<any>(`${this.searchUrl}department=${deptName}&product=${name}`).subscribe(data => {
-           this.totalProducts= data;
-        })
+      // this.http.get<any>(`${this.searchUrl}department=${deptName}&product=${name}`).subscribe(data => {
+      //      this.totalProducts= data;
+      //   })
+      //
+      //   return this.totalProducts;
+      return this.http.get<any>(`${this.searchUrl}department=${deptName}&product=${name}`)
 
-        return this.totalProducts;
-    
-
-      
-     //return this.http.get<Search[]>(`${this.searchUrl}`).pipe(
-       //tap(x => x.length ?
-          //console.log(`found products matching "${name}" and/or "${deptName}"`) :
-          //console.log(`no products matching "${name}" and/or "${deptName}"`)),
-       //catchError(this.handleError<Search[]>('searchHeroes', []))
-     //);
   }
 
   
