@@ -4,7 +4,7 @@ export interface Search
     location: {
       id: number,
       name: string , 
-      zipCode: number
+      zipCode: string
     },
     productDetails: {
       deptId: number,
