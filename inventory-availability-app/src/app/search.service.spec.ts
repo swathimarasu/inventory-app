@@ -2,18 +2,21 @@ import {SearchService} from "./search.service";
 import {HttpClient} from "@angular/common/http";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {TestBed} from "@angular/core/testing";
-import {of} from "rxjs";
+import { Observable, of } from 'rxjs';
 import {Search} from "./search";
+import { products } from './products';
 
 describe('search service', ()=> {
     let service:SearchService;
     let httpClient: HttpClient;
+    let httpClientSpy: { get: jasmine.Spy };
     let httpTestingController: HttpTestingController;
 
     beforeEach( () => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule]
         })
+        httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
         service = TestBed.inject(SearchService);
         httpTestingController = TestBed.inject(HttpTestingController);
     });
@@ -58,3 +61,4 @@ describe('search service', ()=> {
         req.flush([]);
     })
 })
+

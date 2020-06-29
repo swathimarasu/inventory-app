@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+
+import { map } from 'rxjs/operators';
 
 import { Search } from './search';
 
@@ -34,14 +35,15 @@ export class SearchService {
       
       //this.searchUrl = `${this.searchUrl}${queryParam}`;
       console.log(`search api url "${this.searchUrl}`)
-      // this.http.get<any>(`${this.searchUrl}department=${deptName}&product=${name}`).subscribe(data => {
-      //      this.totalProducts= data;
-      //   })
-      //
-      //   return this.totalProducts;
-      return this.http.get<any>(`${this.searchUrl}department=${deptName}&product=${name}`)
+       //this.http.get<any>(`${this.searchUrl}department=${deptName}&product=${name}`).subscribe(data => {
+           // this.totalProducts= data;
+        // })
+      
+        // return this.totalProducts;
+      return this.http.get<Search[]>(`${this.searchUrl}department=${deptName}&product=${name}`).pipe(map((response: any) => response));
 
   }
+
 
   
 
